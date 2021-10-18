@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    --text-primary: #B7C0EE;
+    --text-secondary: #ececec;
+    --bg-primary: #330C2F;
+    --bg-secondary: #7B287D;
+    --transition-speed: 600ms;
+    --scroll-track: #330C2F;
+    --scroll-thumb: #7B287D;
+    --icon-color: #CBF3D2;
+}
+
+body {
+    color: black;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scroll-track)
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+a {
+    color: white;
+}
+
+p {
+    margin-top: 1rem;
+}
+
+.material-icons-outlined {
+    font-size: 48px;
+    color: var(--icon-color)
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    margin-left: 0px;
+    transition: var(--transition-speed);
+    padding-left: 1rem;
+}
+
+.nav-link:hover {
+    filter: grayscale(0) opacity(1);
+    background-color: var(--bg-secondary);
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo .material-icons-outlined {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo .material-icons-outlined {
+    transform: rotate(-180deg);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+/* Smol screens*/
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+/* Big boiz */
+@media only screen and (min-width: 1200px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+    
+    .navbar:hover .link-text {
+        display: block;
+        margin-left: 3rem;
+    }
+
+    .nav-item:last-child {
+        margin-top: auto;
+    }
+}
