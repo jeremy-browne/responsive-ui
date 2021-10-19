@@ -138,9 +138,7 @@ p {
     .nav-link:hover {
         filter: grayscale(0) opacity(1);
         background-color: var(--bg-secondary);
-        height: 100%;
-        padding: 0px;
-        margin: 0px;
+        height: 100%; /* Something up here */
     }
 
     .nav-item {
@@ -154,7 +152,7 @@ p {
 }
 
 /* Big boiz */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 600px) {
     .navbar {
         top: 0;
         width: 5rem;
