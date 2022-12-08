@@ -175,4 +175,9 @@ p {
     .nav-link {
         padding-left: 1rem;
     }
+
+    .sub-link {
+        height: block;
+        display: none;
+    }
 }
